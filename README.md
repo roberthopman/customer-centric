@@ -4,9 +4,11 @@ CustomerCentric is a tiny application to collect e-mail and creditcard details i
 
 # Local setup
 
+```
 bundle install
-rails db:create 
+rails db:create
 rails server
+```
 
 Add `.env` file in the current working directory with:
 ```
