@@ -62,14 +62,14 @@ var getSetupIntent = function(publicKey) {
   return fetch("/create-setup-intent", {
     method: "post",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').content
     }
   })
     .then(function(response) {
       return response.json();
     })
     .then(function(setupIntent) {
-      
       stripeElements(publicKey, setupIntent);
     });
 };
